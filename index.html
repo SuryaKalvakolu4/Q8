@@ -33,7 +33,7 @@
     <script>
         // Function to clear the quiz score from local storage
 function clearQuizScore() {
-    localStorage.removeItem("score8");
+    localStorage.removeItem("Station_13_Score");
 }
 
 // Function to clear local storage when the tab is closed or refreshed
@@ -53,7 +53,7 @@ window.addEventListener('beforeunload', function() {
         ];
 
         let currentQuestion = 0;
-        let score8 = 0;
+        let Station_13_Score = 0;
 
         // Function to display current question
         function displayQuestion() {
@@ -95,9 +95,9 @@ window.addEventListener('beforeunload', function() {
     }
 
     if (!isAnswered || selectedOption !== quiz[currentQuestion].answer) {
-        score8 = 0; // Assign zero score if question is not attempted or answered incorrectly
+        Station_13_Score = 0; // Assign zero score if question is not attempted or answered incorrectly
     } else {
-        score8++; // Increment score for correct answer
+        Station_13_Score++; // Increment score for correct answer
     }
 }
 
@@ -108,8 +108,8 @@ window.addEventListener('beforeunload', function() {
 
             if (currentQuestion === quiz.length) {
                 // All questions answered, store score in local storage
-                localStorage.setItem("score8", score8);
-                alert("Quiz completed. Your score is " + score8);
+                localStorage.setItem("Station_13_Score", Station_13_Score);
+                alert("Quiz completed. Your score is " + Station_13_Score);
             } else {
                 displayQuestion();
             }
